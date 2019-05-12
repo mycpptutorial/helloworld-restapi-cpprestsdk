@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(RestApiWithCppRestSDK)
+project(HelloWorldRestApiWithCppRestSDK)
 
 # Configure required libraries ...
 if(UNIX) # Darwing or Linux
@@ -44,14 +44,14 @@ endif()
 # Project construction ...
 
 # source files ...
-add_executable(${PROJECT_NAME} ./source/main.cpp
-                               ./source/microsvc_controller.cpp
-                               ./source/foundation/network_utils.cpp
-                               ./source/foundation/basic_controller.cpp)
+add_executable(${PROJECT_NAME} ./src/main.cpp
+                               ./src/microsvc_controller.cpp
+                               ./src/foundation/network_utils.cpp
+                               ./src/foundation/basic_controller.cpp)
 
 # headers search paths ...
 set(CPPRESTSDK_INCLUDE_DIR "./libs/cpprestsdk/Release/include")
-set(MICROSERVICE_INCLUDE_DIR "./source/foundation/include")
+set(MICROSERVICE_INCLUDE_DIR "./src/foundation/include")
 message(MICROSERVICE " ${MICROSERVICE_INCLUDE_DIR}")
 set(HEADER_SEARCH_PATHS ${CPPRESTSDK_INCLUDE_DIR} ${MICROSERVICE_INCLUDE_DIR} ${Boost_INCLUDE_DIR} ${OPENSSL_INCLUDE_DIR})
 
